@@ -7,6 +7,6 @@ Description: A (hopefully) user friendly interface to shiny's core
     reactive elements in code chunk without the overhead of designing the user
     interface and coding the applet by hand.
 Depends:
-    R (>= 3.1.0)
+    R (>= 3.1.0), shiny(>= 0.10.0)
 License: GPL
 LazyData: true
