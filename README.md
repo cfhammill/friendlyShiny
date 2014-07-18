@@ -78,6 +78,7 @@ install.packages("devtools") #if you don't already have devtools installed
 library(devtools)
 
 install_git("cfhammill/friendlyShiny")
+library(friendlyShiny
 ```
 
 Outro
