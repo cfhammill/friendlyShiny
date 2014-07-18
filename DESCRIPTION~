@@ -1,0 +1,10 @@
+Package: friendlyShiny
+Title: User-friendly interface to shiny to create interactive code
+Version: 0.1
+Authors@R: "Chris Hammill <cfhammill@gmail.com> [aut, cre]"
+Description: A (hopefully) user friendly interface to shiny's core interactivity functionality, provides
+a recognizable syntax for specifying reactive elements in code chunk without the overhead of designing
+the user interface and coding the applet by hand. 
+Depends: R (>= 3.1.0)
+License: GPL
+LazyData: true
