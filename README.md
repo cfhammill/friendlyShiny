@@ -7,7 +7,9 @@ FriendlyShiny is my attempt at making the wonderful reactive code abilities of R
 To allow interactivity for a code chunk, it just needs to be wrapped in an ```interact``` function call.
 
 
-Consider trying to teach a math class about line specifications. You've taught them a line can be specified by ```y = mx + b``` but you're like to show them how the line changes with its parameters.
+Consider trying to teach a math class about line specifications. You've taught them a line can be specified by 
+```y = mx + b``` 
+but you'd like to show them how the line changes with its parameters.
 
 
 You could write demostration code like this to plot a line, and bring the plot up in front of your students
@@ -26,7 +28,7 @@ You could write demostration code like this to plot a line, and bring the plot u
   abline(intercept, slope)
 ```
 
-You could go back to your code and change the values of slope and intercept by hand or you can make it interactive very simply like so:
+Now you could go back to your code and change the values of slope and intercept by hand, *OR* you can make it interactive very simply like so:
 
 ```r
 interact(
@@ -57,13 +59,14 @@ Supported Widgets
 
 Currently friendlyShiny supports:
 
-  * SliderInput: sI(name, start, min, max, step = NULL)
-  * NumericInput: nI(name, start)
-  * TextInput: tI(name, start = "")
-  * SelectInput (i.e. Drop down box): dI(name, type, start, ...) where ... are your choices (comma delimited) and type can be "character" or "numeric"
-  * RadioButtons: rI(name, type, start, ...) exactly like dI but a different choice mode
-  * CheckboxInput: cI(name, start = FALSE) toggles a logical between true and false
+  * SliderInput: **sI**(name, start, min, max, step = NULL)
+  * NumericInput: **nI**(name, start)
+  * TextInput: **tI**(name, start = "")
+  * SelectInput (i.e. Drop down box): **dI**(name, type, start, ...) where ... are your choices (comma delimited) and type can be "character" or "numeric"
+  * RadioButtons: **rI**(name, type, start, ...) exactly like dI but a different choice mode
+  * CheckboxInput: **cI**(name, start = FALSE) toggles a logical between true and false
 
+please note that the shorthand widget specifications use capital i, not l as it appears in this font.
 
 How to install
 ---------------
@@ -84,6 +87,6 @@ I hope you like my package! I sincerely hope someone takes the reigns on this pr
 
 
 If you like my work please check out my blog at
-www.datamancy.blogspot.com
+http://www.datamancy.blogspot.com
 
 -Chris
