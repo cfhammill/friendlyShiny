@@ -46,9 +46,13 @@ interact(
 }, outputType = "plot")
 ```
 
-All you needed to do was wrap you code in curly braces and a call to ```interact```, then you needed to specify you wanted
-a slider to help you choose the slope between 1/3 and 3, and a numerical input box to specify the intercept (you probably
-wanted a slider for that too, but I'm sure you can see how to fix it).
+All you need to do is wrap your code in curly braces and a call to ```interact```, then you need to specify you want
+a slider to help you choose the slope, and a numerical input box to specify the intercept (you probably
+want a slider for that too, but I'm sure you can see how to fix it).
+ 
+The last argument after the curly braces tells the interact function whether to render your output as text
+or as a plot. Text output is useful for fine tuning parameters for modelling parameters and plot output
+is useful for getting the graphing parameter juuust right.
 
 Supported Widgets
 -----------------
