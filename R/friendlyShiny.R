@@ -55,7 +55,7 @@ interact <- function(code, outputType){
     }
   }
 
-  write(as.character(widgetsToPass[[1]]), "codeFixed.txt")  
+ 
   shinyApp(
     ui = fluidPage(
       sidebarLayout(
@@ -67,7 +67,9 @@ interact <- function(code, outputType){
               plotOutput("main")
             } else {
               stop("Only text and plot output supported, please specify")
-            }) 
+            },
+          htmlOutput("code")
+          )
         )),
     
     server = function(input, output){
@@ -79,6 +81,22 @@ interact <- function(code, outputType){
      } else {
        stop("Only text and plot output supported, please specify")
      }
+     
+     output$code <- renderText({
+       variables <- unlist(matchPull("input\\$\\w+", codeFixed, perl = TRUE, global = TRUE))
+       codeReturn <- paste0(as.character(codeFixed), collapse = "\n")
+       
+       for(i in 1:length(variables)){
+         val <- eval(parse(text = variables[i]))
+         codeReturn <- sub(variables[i], 
+                           as.character(val), 
+                           codeReturn,
+                           fixed = TRUE)
+       }
+       
+       codeReturn <- gsub("\n", "<br>", codeReturn, fixed = TRUE)
+       codeReturn
+       })
     }
     )
 }
