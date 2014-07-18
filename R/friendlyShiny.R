@@ -54,7 +54,8 @@ interact <- function(code, outputType){
       codeFixed <- sub(widget, paste0("input$", widgetName[i]), codeFixed, fixed = TRUE)
     }
   }
-  
+
+  write(as.character(widgetsToPass[[1]]), "codeFixed.txt")  
   shinyApp(
     ui = fluidPage(
       sidebarLayout(
@@ -90,7 +91,7 @@ interact <- function(code, outputType){
 #' @return character vector of each widget function call
 #' @export
 findWidgets <- function(text){
-  matchStarts <- unlist(gregexpr("(?s)[snrcdt]I\\(", text, perl = TRUE))
+  matchStarts <- unlist(gregexpr("(?s)[srcdtn]I\\(", text, perl = TRUE))
   widgetsCleaned <- character(length(matchStarts))
   
   for(i in 1:length(matchStarts)){
@@ -171,8 +172,8 @@ sI <- function(name, start, min = NULL, max = NULL, step = NULL){
 nI <- function(name, start = NULL){
   if(is.null(start)){stop("Please specify a starting value")}
   
-  inputId <- start
-  value <- as.numeric(argList[[1]])
+  inputId <- name
+  value <- as.numeric(start)
   
   return(substitute(numericInput(inputId, inputId, value = value)))
 }
