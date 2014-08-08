@@ -81,6 +81,12 @@ install_git("cfhammill/friendlyShiny")
 library(friendlyShiny
 ```
 
+Alternatively, you can download the tar.gz archive by navigating to the file, click it, then click view raw, saving it where it's convenient for you. You can install it manually like so:
+
+```r
+install.packages("pathToArchive/friendlyShiny.tar.gz", repos = NULL)
+```
+
 Outro
 -----
 
